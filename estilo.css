@@ -35,15 +35,19 @@ header p {
     font-size: 18px;
 }
 
-/* MENU */
+/* MENU DE NAVEGACIÓN */
 nav {
     background: #00509e;
-    padding: 10px 15px;
-    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
 }
 
 nav a {
@@ -60,13 +64,27 @@ nav a:hover, nav a.active {
     color: #ffd700;
 }
 
+/* BOTÓN DE MENÚ (Oculto en PC) */
+.menu-btn {
+    display: none;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+}
+
 /* CONTENIDO */
 section {
     width: 90%;
     max-width: 1100px;
     margin: auto;
     padding: 40px 0;
-    flex: 1; /* Permite que el contenido empuje el footer hacia abajo */
+    flex: 1;
 }
 
 h2 {
@@ -181,7 +199,7 @@ footer {
     margin-top: auto;
 }
 
-/* ADAPTACIÓN MÓVIL (CELULARES Y TABLETS) */
+/* ADAPTACIÓN MÓVIL (CELULARES) */
 @media(max-width: 700px) {
     header {
         padding: 25px 15px;
@@ -195,21 +213,29 @@ footer {
         font-size: 15px;
     }
 
-    nav {
-        display: flex;
+    /* Muestra el botón de menú */
+    .menu-btn {
+        display: block;
+    }
+
+    /* Oculta los enlaces por defecto en móviles */
+    .nav-links {
+        display: none;
         flex-direction: column;
-        padding: 5px;
+        padding: 0;
+    }
+
+    /* Clase que activa JavaScript para mostrar el menú */
+    .nav-links.active {
+        display: flex;
     }
 
     nav a {
         display: block;
-        margin: 4px 0;
-        padding: 10px;
+        margin: 0;
+        padding: 12px;
+        text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    nav a:last-child {
-        border-bottom: none;
     }
 
     section {
