@@ -16,6 +16,8 @@
     </header>
 
     <nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+    <div class="nav-links" id="navLinks">
         <a href="index.html">Inicio</a>
         <a href="historia.html" class="active">Historia</a>
         <a href="oferta.html">Oferta Académica</a>
@@ -48,6 +50,13 @@
     <footer>
         Instituto Perla del Ulúa © 2026
     </footer>
+
+    <script>
+    function toggleMenu() {
+        var nav = document.getElementById("navLinks");
+        nav.classList.toggle("active");
+    }
+</script>
 
 </body>
 
